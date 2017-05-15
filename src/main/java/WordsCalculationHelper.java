@@ -47,21 +47,13 @@ public class WordsCalculationHelper {
     }
 
     public void addUniqueWords(String[] text) {
-        Set<String> uniqueWords = new HashSet<>();
-
-        //Add unique words to coll
+        //Add unique words to collection
         for (String s : text) {
-            uniqueWords.add(s);
-        }
 
-        //Count unique words
-        for (String currentWord : uniqueWords) {
-            int counter = 0;
-            for (String newWord : text) {
-                if (currentWord.equalsIgnoreCase(newWord)) {
-                    counter++;
-                }
-                wordsCount.put(currentWord, counter);
+            if (wordsCount.containsKey(s)) {
+                wordsCount.put(s, wordsCount.get(s) + 1);
+            } else {
+                wordsCount.put(s, 1);
             }
         }
     }
@@ -91,7 +83,5 @@ public class WordsCalculationHelper {
             if (limitNumberOfPair != 0)
                 if (count >= limitNumberOfPair) break;
         }
-
     }
-
 }

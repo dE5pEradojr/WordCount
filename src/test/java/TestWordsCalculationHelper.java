@@ -37,6 +37,4 @@ public class TestWordsCalculationHelper {
         assertEquals("expected count must be '1'", 1, (int) list.get(2).getValue());
         assertEquals("expected word must be 'All'", "All", list.get(2).getKey());
     }
-
-
 }

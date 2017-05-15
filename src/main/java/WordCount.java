@@ -16,13 +16,11 @@ public class WordCount {
     }
 
     private static void checkInputs(String[] args) {
-
         if (args == null
                 || args.length != 2) {
             System.out.println("Wrong inputs!");
             System.exit(0);
         }
-
         try {
             String filePath = args[0];
             int limitNumberOfPair = Integer.parseInt(args[1]);

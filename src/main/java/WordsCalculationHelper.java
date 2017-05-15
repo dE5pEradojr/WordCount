@@ -27,7 +27,6 @@ public class WordsCalculationHelper {
     }
 
     public String[] readFileToSepareteWords() throws IOException {
-
         //Read file and splits to separate words
         String[] everything;
         String regexSplit = "[ ,.]+";
@@ -35,7 +34,6 @@ public class WordsCalculationHelper {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
-
             while (line != null) {
                 sb.append(line.toLowerCase());
                 sb.append(" ");
@@ -49,7 +47,6 @@ public class WordsCalculationHelper {
     public void addUniqueWords(String[] text) {
         //Add unique words to collection
         for (String s : text) {
-
             if (wordsCount.containsKey(s)) {
                 wordsCount.put(s, wordsCount.get(s) + 1);
             } else {
@@ -59,7 +56,6 @@ public class WordsCalculationHelper {
     }
 
     public List<Map.Entry<String, Integer>> sortPairsByValue() {
-
         //Sort by value
         Set<Map.Entry<String, Integer>> set = wordsCount.entrySet();
         List<Map.Entry<String, Integer>> list = new ArrayList<>(set);
@@ -72,7 +68,6 @@ public class WordsCalculationHelper {
     }
 
     public void printPairs(List<Map.Entry<String, Integer>> list) {
-
         //Print out an amount of unique words which greater or equal to N
         int count = 0;
         for (Map.Entry<String, Integer> entry : list) {

@@ -5,9 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-/**
- * Created by Administrator on 12.05.2017.
- */
 public class WordsCalculationHelper {
 
     private Map<String, Integer> wordsCount = new TreeMap<>();
